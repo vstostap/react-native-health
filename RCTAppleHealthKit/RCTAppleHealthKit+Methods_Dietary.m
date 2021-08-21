@@ -448,7 +448,7 @@
 
 - (void)saveWater:(NSDictionary *)input callback:(RCTResponseSenderBlock)callback
 {
-    HKUnit *unit = [RCTAppleHealthKit hkUnitFromOptions:input key:@"unit" withDefault:[HKUnit literUnit]];
+    HKUnit *unit = [RCTAppleHealthKit hkUnitFromOptions:input key:@"unit" withDefault:[HKUnit literUnitWithMetricPrefix(.Milli)]];
     NSDate *timeWaterWasConsumed = [RCTAppleHealthKit dateFromOptions:input key:@"date" withDefault:[NSDate date]];
     double waterValue = [RCTAppleHealthKit doubleFromOptions:input key:@"value" withDefault:(double)0];
 
